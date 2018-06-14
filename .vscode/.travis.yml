@@ -1,8 +1,38 @@
+---
+sudo: required
+dist: trusty
 language: node_js
+
 node_js:
-  - "8"
+  # LTS version
+  - "8.9.1"
+
+notifications:
+  email:
+    on_success: change # only if status change from fail to success
+    on_failure: always # if there is a fail
+    recipients:
+      - caglarergul@me.com
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+before_script:
+  - export CI=false
+
 script:
-  - npm run lint
-  - npm test
-after_success:
-  - npm run coverage
+  - npm test #Runs Tests
+  - npm run build #Creats a production build
+
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+  on:
+    branch: master
