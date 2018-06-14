@@ -25,7 +25,7 @@ class Header extends Component {
                    
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <a class="nav-link" href="/">
+                            <a className="nav-link" href="/">
                             <MaterialIcon icon="home" color="#ffffff" />
                             Home</a>
                         </li>

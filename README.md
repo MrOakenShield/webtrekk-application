@@ -1,13 +1,13 @@
-# React & GoLang Rest Api Project
+# Webtrekk React & NodeJS Application 
 
 This project will help you to understand Rest Api call with ReactJS. 
 
-I used a sample Rest Api which is codded in GoLang by <https://github.com/denizgokce>
+I used a NodeJS & MongoDB API to create, update & delete procedures.
 
 ## What I used.
 
 * ReactJS, React DOM, React Router Libraries.
-* Bootstrap 4
+* Bootstrap 4 & Material Theme
 * HTML5 & CSS3
 * Some old-school JavaScripts.
 * Axios Rest Api Library <https://github.com/axios/axios>
@@ -26,7 +26,7 @@ Happy Hacking...
 
 MIT License
 
-Copyright (c) 2017
+Copyright (c) 2018
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
