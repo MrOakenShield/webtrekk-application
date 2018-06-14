@@ -15,7 +15,7 @@ I used a NodeJS & MongoDB API to create, update & delete procedures.
 
 ## How can I run it?
 
-Firstly clone this repo: https://github.com/caglarergul/react-go-api-call.git
+Firstly clone this repo: https://github.com/caglarergul/webtrekk-application.git
 
 After the clonning process run <pre>npm install</pre> then <pre>npm start</pre>
 commands then check the http://localhost:3000 URL.
