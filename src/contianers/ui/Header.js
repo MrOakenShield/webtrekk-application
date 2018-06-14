@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from "../../logo.png";
 import MaterialIcon from 'material-icons-react';
-import {NavLink} from 'react-router-dom';
+
 class Header extends Component {
     render() {
         return (
@@ -25,24 +25,20 @@ class Header extends Component {
                    
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                        
-                    <NavLink to={"/"} exact activeClassName={"nav-link active"} className={"nav-link"}>
-                        <MaterialIcon icon="home" color="#ffffff" /> Customer List
-                    </NavLink>
+                            <a className="nav-link" href="/">
+                            <MaterialIcon icon="home" color="#ffffff" />
+                            Home</a>
                         </li>
                         <li className="nav-item">
-                        <NavLink to={"/Create"} exact activeClassName={"nav-link active"} className={"nav-link"}>
-                        <MaterialIcon icon="add_to_photos" color="#ffffff" /> Create Customer
-                    </NavLink>                        </li>
+                            <a className="nav-link" href={"/Create"}><MaterialIcon icon="add_to_photos" color="#ffffff" size="small" />Create</a>
+                        </li>
                         <li className="nav-item">
-                        <NavLink to={"/Update"} exact activeClassName={"nav-link active"} className={"nav-link"}>
-                        <MaterialIcon icon="edit" color="#ffffff" /> Update Customer
-                    </NavLink>                        </li>
+                            <a className="nav-link" href={"/Update"}><MaterialIcon icon="edit" color="#ffffff" size="small"/>Update</a>
+                        </li>
             
                         <li className="nav-item">
-                        <NavLink to={"/Delete"} exact activeClassName={"nav-link active"} className={"nav-link"}>
-                        <MaterialIcon icon="delete_sweep" color="#ffffff" /> Delete Customer
-                    </NavLink>                        </li>
+                            <a className="nav-link" href={"/Delete"}><MaterialIcon icon="delete_sweep" color="#ffffff" size="small" />Delete</a>
+                        </li>
             
                     </ul>
                     
