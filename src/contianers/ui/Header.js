@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from "../../logo.png";
 import MaterialIcon from 'material-icons-react';
-
+import {NavLink} from 'react-router-dom';
 class Header extends Component {
     render() {
         return (
@@ -11,7 +11,7 @@ class Header extends Component {
             <nav className="navbar navbar-expand-lg navbar-dark black">
             
                 <div className="container">
-                <a className="navbar-brand" href="/"><img src={logo} width="75px" /></a>
+                <a className="navbar-brand" href="/"><img src={logo} alt="logo" width="75px" /></a>
             
                
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -25,20 +25,24 @@ class Header extends Component {
                    
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="/">
-                            <MaterialIcon icon="home" color="#ffffff" />
-                            Home</a>
+                        
+                    <NavLink to={"/"} exact activeClassName={"nav-link active"} className={"nav-link"}>
+                        <MaterialIcon icon="home" color="#ffffff" /> Customer List
+                    </NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href={"/Create"}><MaterialIcon icon="add_to_photos" color="#ffffff" size="small" />Create</a>
-                        </li>
+                        <NavLink to={"/Create"} exact activeClassName={"nav-link active"} className={"nav-link"}>
+                        <MaterialIcon icon="add_to_photos" color="#ffffff" /> Create Customer
+                    </NavLink>                        </li>
                         <li className="nav-item">
-                            <a className="nav-link" href={"/Update"}><MaterialIcon icon="edit" color="#ffffff" size="small"/>Update</a>
-                        </li>
+                        <NavLink to={"/Update"} exact activeClassName={"nav-link active"} className={"nav-link"}>
+                        <MaterialIcon icon="edit" color="#ffffff" /> Update Customer
+                    </NavLink>                        </li>
             
                         <li className="nav-item">
-                            <a className="nav-link" href={"/Delete"}><MaterialIcon icon="delete_sweep" color="#ffffff" size="small" />Delete</a>
-                        </li>
+                        <NavLink to={"/Delete"} exact activeClassName={"nav-link active"} className={"nav-link"}>
+                        <MaterialIcon icon="delete_sweep" color="#ffffff" /> Delete Customer
+                    </NavLink>                        </li>
             
                     </ul>
                     

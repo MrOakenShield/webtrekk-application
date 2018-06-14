@@ -46,7 +46,8 @@ class UpdateView extends Component {
             lastname: this.state.selectedPerson.name.last,
             birthday: this.state.selectedPerson.birthday,
             lastContact: this.state.selectedPerson.lastContact,
-            customerLifetimeValue: this.state.selectedPerson.customerLifetimeValue
+            customerLifetimeValue: this.state.selectedPerson.customerLifetimeValue,
+            gender: this.state.selectedPerson.gender
         };
 
         axios.put("customer/"+data.id, data)
@@ -166,14 +167,14 @@ class UpdateView extends Component {
                             
                             <div className="input-group">
                             <div className="radio">
-                                <input type="radio"  id="male" value="m" 
+                                <input type="radio"  id="Man" value="m" 
                                 checked={this.state.selectedPerson.gender === 'm'}
-                                onChange={this.handleOptionChange}  /> Male     &nbsp;
+                                onChange={this.handleOptionChange}  /> Man     &nbsp;
                               </div>
                               <div className="radio">
-                                <input type="radio"  id="female" value="f" 
-                                checked={this.state.selectedPerson.gender === 'f'} 
-                                onChange={this.handleOptionChange} /> Female 
+                                <input type="radio"  id="Woman" value="w" 
+                                checked={this.state.selectedPerson.gender === 'w'} 
+                                onChange={this.handleOptionChange} /> Woman 
                                 </div>
                             </div>
                             

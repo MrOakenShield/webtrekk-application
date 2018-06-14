@@ -80,18 +80,18 @@ class CreateView extends Component {
                         
                             <label >Gender</label>
                             <div className="form-check mb-4">
-                            <input type="radio" className="form-check-input" id="male" value="m" 
+                            <input type="radio" className="form-check-input" id="Man" value="m" 
                                 checked={this.state.selectedGender === 'm'}
-                                onChange={this.handleOptionChange}  /><label className="form-check-label" htmlFor="male">
-                                Male
+                                onChange={this.handleOptionChange}  /><label className="form-check-label" htmlFor="Man">
+                                Man
                             </label> 
                             </div>
 
                             <div className="form-check mb-4">
-                                <input type="radio"  className="form-check-input" id="female" value="f" 
-                                checked={this.state.selectedGender === 'f'} 
-                                onChange={this.handleOptionChange} /> <label className="form-check-label" htmlFor="female">
-                                Female
+                                <input type="radio"  className="form-check-input" id="Woman" value="w" 
+                                checked={this.state.selectedGender === 'w'} 
+                                onChange={this.handleOptionChange} /> <label className="form-check-label" htmlFor="Woman">
+                                Woman
                                 </label>
                             </div>
                                     
