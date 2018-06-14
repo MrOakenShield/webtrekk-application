@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import axios from "axios/index";
-import Person from '../../models/Person';
+import axios from "../../DAL/database";
+import Person from '../../partials/Person';
 
 class Content extends Component {
 
     state = {people: []};
 
     componentDidMount() {
-        axios.get("http://localhost:8080/customers").then(response => {
+        axios.get("customers").then(response => {
             const people = response.data;
             const updatedPeople = people.map(persons => {
                 return {
@@ -29,10 +29,10 @@ class Content extends Component {
 
         return (
             <div>
-                <h1 className="text-danger text-center">Customer List</h1>
+                <h1 className="text-center">Customer List</h1>
                 <hr/>
                 <div className="row">
-                    <div className="col-md-10 col-md-offset-1">
+                    <div className="col-12">
                         <table className="table table-striped table-bordered">
                             <thead>
                             <tr>

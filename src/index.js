@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-// Your routes.js file
-
 import registerServiceWorker from './registerServiceWorker';
-
 
 const app = (
     <BrowserRouter>

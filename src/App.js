@@ -16,8 +16,8 @@ class App extends Component {
             <Aux>
                 <Layout>
                     <Route path="/" exact component={List}/>
-                    <Route path="/Add" exact component={Create}/>
-                    <Route path="/Edit" exact component={Update}/>
+                    <Route path="/Create" exact component={Create}/>
+                    <Route path="/Update" exact component={Update}/>
                     <Route path="/Delete" exact component={Delete}/>
                 </Layout>
             </Aux>

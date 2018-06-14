@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import axios from "axios/index";
-import SmallPerson from "../../models/SmallPerson";
+import axios from "../../DAL/database";
+import SmallPerson from "../../partials/SmallPerson";
 import moment from "moment";
+import MaterialIcon from 'material-icons-react';
+
 class DeleteView extends Component {
 
     state = {
@@ -15,7 +17,7 @@ class DeleteView extends Component {
     };
 
     componentDidMount() {
-        axios.get("http://localhost:8080/customers/").then(response => {
+        axios.get("customers/").then(response => {
             
             const people = response.data;
             const updatedPeople = people.map(persons => {
@@ -43,7 +45,7 @@ class DeleteView extends Component {
             firstname: this.state.selectedPerson.name.first,
             lastname: this.state.selectedPerson.name.last
         };
-        axios.delete("http://localhost:8080/customer/"+data.id, data)
+        axios.delete("customer/"+data.id, data)
             .then(response => {
                 alert("Successfully deleted!");
                 setTimeout(() => {
@@ -81,15 +83,15 @@ class DeleteView extends Component {
         return (
             <div>
                 <h1 className="text-center text-danger" xmlns={"http://www.w3.org/1999/html"}>
-                    Delete Person
+                    Delete Customer
                 </h1>
                 <br/>
                 <div className="row">
                     <div className="col-md-3">
-                        <h3 className="text-danger">Select Person</h3>
+                        <h3 className="text-danger">Select Customer</h3>
                         <hr/>
                         <div className="dropdown">
-                            <button className="btn btn-default dropdown-toggle" type="button" id="peopleDropdown"
+                            <button className="btn btn-danger dropdown-toggle" type="button" id="peopleDropdown"
                                     data-toggle="dropdown">
                                 {this.state.selectedPerson.name.first + "  " + this.state.selectedPerson.name.last + " "}
                                 <span className="caret"/>
@@ -99,27 +101,27 @@ class DeleteView extends Component {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-7">
-                        <div className="form-group">
+                    <div className="col-md-9">
+                        <div className="md-form">
                             <label className="inputEmail">ID</label>
                             <input type="text" className="form-control input-lg"
-                                   placeholder="Person ID" disabled value={this.state.selectedPerson.id}/>
+                                   placeholder="Person ID" disabled value={this.state.selectedPerson._id}/>
                         </div>
-                        <div className="form-group">
+                        <div className="md-form">
                             <label className="inputPassword">First Name</label>
                             <input type="text" className="form-control input-lg"
                                    placeholder="Person First Name"
                                    value={this.state.selectedPerson.name.first}
                                    onChange={this.changeFirstname.bind(this)} disabled/>
                         </div>
-                        <div className="form-group">
+                        <div className="md-form">
                             <label className="inputPassword">Last Name</label>
                             <input type="text" className="form-control input-lg"
                                    placeholder="Person Last Name"
                                    value={this.state.selectedPerson.name.last}
                                    onChange={this.changeLastname.bind(this)} disabled/>
                         </div>
-                        <button className="btn btn-info form-control input-lg" onClick={this.deleteDataHandler}>Delete
+                        <button className="btn btn-danger form-control input-lg" onClick={this.deleteDataHandler}><MaterialIcon icon="delete_sweep" color="#ffffff" size="small" /> Delete
                         </button>
                     </div>
                 </div>

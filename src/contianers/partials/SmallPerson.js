@@ -16,9 +16,9 @@ class smallperson extends Component {
 
     render() {
         return (
-            <li>
-                <a onClick={()=>this.props.onClick(this.state.id)}>{this.state.firstname + " " + this.state.lastname}</a>
-            </li>
+           
+                <a className="dropdown-item" onClick={()=>this.props.onClick(this.state.id)}>{this.state.firstname + " " + this.state.lastname}</a>
+            
         );
     }
 }
